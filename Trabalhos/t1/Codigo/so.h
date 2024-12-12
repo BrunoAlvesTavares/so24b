@@ -1,20 +1,56 @@
-// so.h
-// sistema operacional
-// simulador de computador
-// so24b
-
 #ifndef SO_H
 #define SO_H
-
-typedef struct so_t so_t;
 
 #include "memoria.h"
 #include "cpu.h"
 #include "es.h"
-#include "console.h" // só para uma gambiarra
+#include "console.h"
 
+// Declaração antecipada para evitar dependência circular
+typedef struct processo_t processo_t;
+
+#define INTERVALO_INTERRUPCAO 20
+#define QUANTUM 5
+#define ESCALONADOR 2 // 1 para prioridade, 2 round-robin, 3 para simples
+#define QTD_IRQ 6     // qtd de interrupção
+
+typedef struct no_fila_t {
+    processo_t *processo;
+    struct no_fila_t *proximo;
+} no_fila_t;
+
+typedef struct {
+    no_fila_t *inicio;
+    no_fila_t *fim;
+} fila_t;
+
+typedef struct {
+    int tempo_total_execucao;
+    int tempo_total_ocioso;
+    int num_interrupcoes[QTD_IRQ];
+    int num_preempcoes;
+} so_metricas_t;
+
+typedef struct so_t {
+    cpu_t *cpu;
+    mem_t *mem;
+    es_t *es;
+    console_t *console;
+    bool erro_interno;
+    processo_t *processo_corrente;
+    processo_t **processos;
+    fila_t *fila_prontos;
+    int quantum_proc;
+    int pid_atual;
+    so_metricas_t metricas;
+    int numero_processos;
+    int relogio_atual;
+} so_t;
+
+// Declarações de funções do sistema operacional
 so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console);
 void so_destroi(so_t *self);
+
 
 // Chamadas de sistema
 // Uma chamada de sistema é realizada colocando a identificação da

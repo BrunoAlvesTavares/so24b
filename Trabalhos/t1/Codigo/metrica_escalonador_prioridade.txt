@@ -1,0 +1,79 @@
+MÉTRICAS DO SISTEMA OPERACIONAL
+| MÉTRICA                       | VALOR      |
+|-------------------------------|------------|
+| NÚMERO DE PROCESSOS           | 4          |
+| TEMPO TOTAL DE EXECUÇÃO       | 21905      |
+| TEMPO TOTAL OCIOSO            | 393        |
+| NÚMERO DE PREEMPÇÕES          | 129        |
+
+INTERRUPÇÕES:
+| IRQ   | QUANTIDADE |
+|-------|------------|
+| 0     | 1          |
+| 1     | 0          |
+| 2     | 462        |
+| 3     | 1080       |
+| 4     | 0          |
+| 5     | 0          |
+
+MÉTRICAS DOS PROCESSOS:
+
+PROCESSO 1
+| MÉTRICA                | VALOR      |
+|------------------------|------------|
+| NÚMERO DE PREEMPÇÕES   | 0          |
+| TEMPO DE RESPOSTA      | 0          |
+| TEMPO DE RETORNO       | 21905      |
+
+ESTADOS DO PROCESSO 1:
+| ESTADO       | QUANTIDADE | TEMPO TOTAL  |
+|------------|------------|--------------|
+| EXECUTANDO   | 1          | 821          |
+| PRONTO       | 2          | 0            |
+| BLOQUEADO    | 1          | 21084        |
+| MORTO        | 1          | 0            |
+
+PROCESSO 2
+| MÉTRICA                | VALOR      |
+|------------------------|------------|
+| NÚMERO DE PREEMPÇÕES   | 74         |
+| TEMPO DE RESPOSTA      | 125        |
+| TEMPO DE RETORNO       | 21114      |
+
+ESTADOS DO PROCESSO 2:
+| ESTADO       | QUANTIDADE | TEMPO TOTAL  |
+|------------|------------|--------------|
+| EXECUTANDO   | 83         | 10278        |
+| PRONTO       | 83         | 10383        |
+| BLOQUEADO    | 8          | 453          |
+| MORTO        | 1          | 369          |
+
+PROCESSO 3
+| MÉTRICA                | VALOR      |
+|------------------------|------------|
+| NÚMERO DE PREEMPÇÕES   | 39         |
+| TEMPO DE RESPOSTA      | 157        |
+| TEMPO DE RETORNO       | 13425      |
+
+ESTADOS DO PROCESSO 3:
+| ESTADO       | QUANTIDADE | TEMPO TOTAL  |
+|------------|------------|--------------|
+| EXECUTANDO   | 53         | 4245         |
+| PRONTO       | 53         | 8363         |
+| BLOQUEADO    | 13         | 817          |
+| MORTO        | 1          | 8047         |
+
+PROCESSO 4
+| MÉTRICA                | VALOR      |
+|------------------------|------------|
+| NÚMERO DE PREEMPÇÕES   | 16         |
+| TEMPO DE RESPOSTA      | 59         |
+| TEMPO DE RETORNO       | 17127      |
+
+ESTADOS DO PROCESSO 4:
+| ESTADO       | QUANTIDADE | TEMPO TOTAL  |
+|------------|------------|--------------|
+| EXECUTANDO   | 110        | 6168         |
+| PRONTO       | 110        | 6523         |
+| BLOQUEADO    | 93         | 4436         |
+| MORTO        | 1          | 4337         |
